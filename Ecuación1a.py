@@ -8,7 +8,7 @@ import matplotlib
 import math as m
 matplotlib.use('TkAgg')
 import numpy as np
-
+#.
 pi = tf.constant(m.pi)
 class ODEsolver(Sequential):
     loss_tracker = keras.metrics.Mean(name="loss")
@@ -50,7 +50,7 @@ class ODEsolver(Sequential):
         return [keras.metrics.Mean(name='loss')]
 
 model = ODEsolver()
-
+# La ecuación es 3sin(pi*x) por lo cual se usó el tanh para aproximar mejor la función.
 model.add(Dense(10, activation='tanh', input_shape=(1,)))
 model.add(Dense(1, activation='tanh'))
 model.add(Dense(1, activation='linear'))
