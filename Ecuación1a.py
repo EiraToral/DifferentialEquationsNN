@@ -8,7 +8,7 @@ import matplotlib
 import math as m
 matplotlib.use('TkAgg')
 import numpy as np
-#.
+#..
 pi = tf.constant(m.pi)
 class ODEsolver(Sequential):
     loss_tracker = keras.metrics.Mean(name="loss")
