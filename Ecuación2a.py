@@ -45,7 +45,7 @@ class ODEsolver(Sequential):
 
 
 model = ODEsolver()
-
+#Se usa el tanh para aproximar mejor la función
 model.add(Dense(10, activation='tanh', input_shape=(1,)))
 model.add(Dense(1, activation='tanh'))
 model.add(Dense(1, activation='linear'))
