@@ -20,6 +20,7 @@ class ODEsolver(Sequential):
                 #y_pred son los valores aletorios de "y" los cuales buscan aproximar
                 #a la función original
                 y_pred = self(x, training=True)
+                #para la segunda derivada
             dy = tape2.gradient(y_pred, x)
             dy2 = tape.gradient(dy, x)
             # Se definen los tensores para las condiciones iniciales en x
