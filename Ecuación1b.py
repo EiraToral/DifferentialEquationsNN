@@ -13,6 +13,7 @@ import numpy as np
 pi = tf.constant(m.pi)
 class ODEsolver(Sequential):
     loss_tracker = keras.metrics.Mean(name="loss")
+
     def train_step(self, data):
         batch_size = tf.shape(data)[0]
         # Minival=-1 y maxval=1 son los intervalos de la ecuación
@@ -60,6 +61,7 @@ model.summary()
 model.compile(optimizer=RMSprop(), metrics=['loss'])
 tf.keras.layers.Dropout(.25, input_shape=(2,))
 x = tf.linspace(-1, 1, 1000)
+#epochs=500
 history = model.fit(x, epochs=500, verbose=1)
 
 x_testv = tf.linspace(-1, 1, 1000)
